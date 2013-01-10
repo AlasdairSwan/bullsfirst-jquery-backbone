@@ -1,0 +1,31 @@
+
+	<div class="filter-form">
+	    <form id="{{tab}}-filter-form">
+	        
+	        <div class="filter-field account">
+	            <label for="filter-accountId">Account</label>
+	            <select id="{{tab}}-filter-accountId" name="accountId">
+	            	<option value="">All Accounts</option>
+	            	{{#each models}}
+	            		<option value={{this.id}}>{{this.attributes.name}}</option>
+	            	{{/each}}
+	            </select>
+	        </div>
+
+	        <div class="filter-field">
+	            <label for="filter-fromDate">From</label>
+	            <input id="{{tab}}-fromDate" name="fromDate" type="text" />
+	        </div> 
+
+	        <div class="filter-field">
+	            <label for="filter-toDate">To</label>
+	            <input id="{{tab}}-toDate" name="toDate" type="text" />
+	        </div> 
+
+	    </form>
+	</div>
+
+	<div class="filter-buttons">
+	    <a class="js-reset-filters-button button medium" href="#">Reset</a>
+	    <a class="js-apply-filters-button button medium" href="#">Apply Filters</a>
+	</div>

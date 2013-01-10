@@ -58,6 +58,7 @@ define(['bullsfirst/domain/UserContext',
             // Subscribe to events
             MessageBus.on(Message.UserLoggedInEvent, function() {
                 UserContext.updateAccounts();
+                
             });
         },
 

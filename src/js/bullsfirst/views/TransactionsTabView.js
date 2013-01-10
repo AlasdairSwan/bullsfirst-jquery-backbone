@@ -21,12 +21,31 @@
  */
 define(
     [
-        'backbone'
+        'backbone',
+        'bullsfirst/views/FilterView',
+        'bullsfirst/views/TransactionsTableView',
+        'bullsfirst/domain/UserContext',
+        'bullsfirst/domain/Transactions'
     ],
-    function(Backbone) {
+    function(Backbone, FilterView, TransactionsTableView, UserContext, Transactions) {
         'use strict';
-
+        
         return Backbone.View.extend({
+
+			initialize: function(){
+				this.FilterView = new FilterView( {
+					el: '#transactions-filter',
+					tab: 'transactions',
+					collection: UserContext.getBrokerageAccounts()
+				});
+
+				this.TableView = new TransactionsTableView ( {
+					el: '#transactions-table',
+					collection: new Transactions()
+				});
+
+			}
+
         });
     }
 );

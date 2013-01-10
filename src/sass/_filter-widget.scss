@@ -1,0 +1,47 @@
+/* -----------------------------------------------------------------------------
+ * filter-widget
+ * -------------------------------------------------------------------------- */
+
+ .filter-wrapper {
+	margin: 21px 40px 14px 80px;
+	padding:  10px 20px;
+	background: $filter-background-color;
+ }
+ 
+ .filter-form {
+ 	width: 670px;
+ 	position: relative;
+ 	display: inline;
+ 	float: left;
+ }
+
+ .filter-field {
+ 	position: relative;
+ 	display: inline;
+ 	float: left;
+ 	width: 140px;
+ 	margin: 9px 20px 0 0;
+ }
+
+ .filter-field.account {
+ 	width: 300px;
+ }
+
+ .filter-buttons {
+	float: right;
+	width: 110px;
+ }
+ 
+ .filter-buttons .button {
+	margin-bottom: 10px;
+ }
+ 
+ .filter-buttons .button:last-child {
+	margin-bottom: 0;
+ }
+
+ .filter-field select {
+ 	height: 27px;
+ 	padding: 1px;
+ 	width: 100%;
+ }
