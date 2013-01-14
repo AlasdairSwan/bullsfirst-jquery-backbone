@@ -75,6 +75,8 @@ define(
                     this.$el.val(UserContext.getSelectedAccount().id);
                 }
 
+                $('#postab-account-selector').selectbox();
+
                 return this;
             }
         });

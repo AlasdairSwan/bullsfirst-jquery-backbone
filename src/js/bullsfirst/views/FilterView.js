@@ -25,7 +25,8 @@ define(
         'bullsfirst/framework/MessageBus',
         'bullsfirst/views/TemplateManager',
         'jquery',
-        'moment'
+        'moment',
+        'jqueryselectbox'
     ],
     
     function( Backbone, MessageBus, TemplateManager, $, moment ) {
@@ -55,11 +56,14 @@ define(
 
 				$(this.el).html(template(hash));
 
-				// Create date pickers
+				// Style select boxes
+                $('#' + tab + '-filter-form select').selectbox();
+
+                // Create date pickers
 				$('#' + tab + '-fromDate').datepicker();
 				$('#' + tab + '-toDate').datepicker();
 
-				this.resetFilter();
+				this.resetDatepicker(tab);
 
 				// Subscribe to events
 				MessageBus.on('UpdateTransactions', function() {
@@ -74,10 +78,20 @@ define(
 			},
 
 			resetFilter: function() {
-				document.getElementById(this.options.tab + '-filter-accountId').selectedIndex = 0;
-				$('#' + this.options.tab + '-fromDate').datepicker('setDate', new Date());
-				$('#' + this.options.tab + '-toDate').datepicker('setDate', new Date());
+                var tab = this.options.tab;
+                this.resetSelectbox(tab);
+				this.resetDatepicker(tab);
 			},
+
+            resetSelectbox: function(tab){
+                document.getElementById(tab + '-filter-accountId').selectedIndex = 0;
+                $('#' + tab + '-filter-form a.sbSelector').html( $('#' + tab + '-filter-form select option:first-child').html() );
+            },
+
+            resetDatepicker: function(tab){
+                $('#' + tab + '-fromDate').datepicker('setDate', new Date());
+                $('#' + tab + '-toDate').datepicker('setDate', new Date());
+            },
 
 			clickApply: function(e) {
 				e.preventDefault();

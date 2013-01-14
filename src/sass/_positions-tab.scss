@@ -58,3 +58,35 @@
 #postab-account-selector selected {
     text-decoration: italics;
 }
+
+#positions-tab .sbHolder {
+    width: 380px;
+    background-color: $selector-fancy-color;
+}
+
+#positions-tab .sbSelector {
+    width: 380px;
+}
+
+#positions-tab .sbSelector:link,
+#positions-tab .sbSelector:visited,
+#positions-tab .sbSelector:hover{
+    color: $white;
+}
+
+#positions-tab .sbOptions{
+    width: 378px;
+    background-color: $selector-fancy-color;
+}
+
+#positions-tab .sbOptions li:hover{
+    background: $white;
+}
+
+#positions-tab .sbToggle {
+    background-position: 10px -79px;
+}
+
+#positions-tab .sbToggleOpen{
+    background-position: 10px -134px;
+}
