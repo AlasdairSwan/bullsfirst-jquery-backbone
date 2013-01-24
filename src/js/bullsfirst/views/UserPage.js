@@ -27,14 +27,16 @@ define(['bullsfirst/domain/UserContext',
         'bullsfirst/views/OrdersTabView',
         'bullsfirst/views/PositionsTabView',
         'bullsfirst/views/TabbarView',
+        'bullsfirst/views/TradeView',
         'bullsfirst/views/TransactionsTabView',
         'bullsfirst/views/UsernameView'],
        function(UserContext, Message, MessageBus, Page, AccountsTabView, OrdersTabView, PositionsTabView, TabbarView,
-                TransactionsTabView, UsernameView) {
+                TradeView, TransactionsTabView, UsernameView) {
     'use strict';
 
     return Page.extend({
         usernameView: null,
+        tradeView: null,
         tabbarView: null,
         accountsTabView: null,
         positionsTabView: null,
@@ -68,7 +70,15 @@ define(['bullsfirst/domain/UserContext',
             return false;
         },
 
-        trade: function() {
+        trade: function(e) {
+            var el = '#trade-button';
+            e.preventDefault();
+            
+            if ( !$(el).hasClass('disabled') ) {
+                this.tradeView = new TradeView({el: '#user-page'});
+                $(el).addClass('disabled');
+            }
+
             return false;
         },
 

@@ -1,0 +1,64 @@
+<form id="trade-form">
+
+	<div class="modal-field account">
+	    <label for="trade-accountId">Account</label>
+	    <select id="{{tab}}-trade-accountId" name="accountId">
+	    	{{#each models}}
+	    		<option value={{this.id}}>{{this.attributes.name}}</option>
+	    	{{/each}}
+	    </select>
+	</div>
+
+	<div class="modal-field">
+	    <label for="symbol">Symbol</label>
+	    <input id="{{tab}}-symbol" name="tradeSymbol" type="text" />
+	</div> 
+
+	<div class="modal-field">
+		<p>Last Trade Price</p>
+		<span class="lastPrice"></span>
+	</div>
+
+	<div class="modal-field">
+		<label for="buyOrSell">Buy/Sell</label>
+		<input type="radio" name="buyOrSell" value="buy">
+		<input type="radio" name="buyOrSell" value="sell">
+	</div>
+
+	<div class="modal-field">
+	    <label for="quantity">Quantity</label>
+	    <input id="{{tab}}-quantity" name="tradeQuantity" type="text" />
+	</div> 
+
+	<div class="modal-field">
+	    <label for="trade-orderType">Order Type</label>
+	    <select id="{{tab}}-trade-orderType" name="orderType">
+	    	<option value="market">Market</option>
+	    	<option value="limit">Limit</option>
+	    </select>
+	</div>
+
+	<div class="modal-field">
+	    <label for="trade-term">Term</label>
+	    <select id="{{tab}}-trade-term" name="term">
+	    	<option value="market">Good For The Day</option>
+	    	<option value="limit">Good Til Cancelled</option>
+	    </select>
+	</div>
+
+	<div class="modal-field">
+		<label for="allOrNone">All-or-None</label>
+		<input type="checkbox" value="allOrNone" />
+	</div>
+
+	<div class="modal-field">
+		<p>Trade Cost</p>
+		<span id="tradeCost"></span>
+		<p>Fees</p>
+		<span id="fees"></span>
+		<p>Total Cost</p>
+		<span id="totalCost"></span>
+	</div>
+
+	<a class="button large">Preview Order</a>
+</form>

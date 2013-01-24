@@ -1,0 +1,52 @@
+/* -----------------------------------------------------------------------------
+ * modals
+ * -------------------------------------------------------------------------- */
+
+ .modal-wrapper {
+ 	width: 300px;
+ 	background: #3F3F3F;
+ 	position: absolute;
+ 	z-index: 99999;
+ 	right: 0;
+ 	top: 0;
+ 	border: 10px solid rgba(255, 255, 255, 0.3);
+ 	-moz-background-clip: padding;
+	  -webkit-background-clip: padding;
+	    background-clip: padding-box; 
+ }
+ 
+ .modal-wrapper.right { right: 0; }
+ .modal-wrapper.left { left: 0; }
+ .modal-wrapper.center { right: 0; } /* TODO */
+
+ #user-page .modal-wrapper header {
+ 	height: auto;
+ 	background: #3F3F3F;
+ 	color: $white;
+ }
+ 
+ .modal-close {
+ 	width: 17px;
+ 	height: 17px;
+ 	background: url('../img/modal-close.png');
+	position: absolute;
+ 	display: inline;
+ 	top: 0;
+ 	right: 0;
+ }
+
+ .modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	background: #3F3F3F;
+	z-index: 99998;
+	display: none;
+ }
+
+ .modal-overlay.show {
+ 	opacity: 0.75;
+ }

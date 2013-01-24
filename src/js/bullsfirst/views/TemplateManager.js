@@ -27,9 +27,13 @@ define(
         'text!bullsfirst/templates/account-selector.html',
         'text!bullsfirst/templates/position.html',
         'text!bullsfirst/templates/filter-transactions.html',
+        'text!bullsfirst/templates/modal.html',
+        'text!bullsfirst/templates/trade.html',
         'text!bullsfirst/templates/transaction.html'
     ],
-    function(Formatter, Handlebars, accountTemplate, accountSelectorTemplate, positionTemplate, filterTransactionsTemplate, transactionTemplate) {
+    function(Formatter, Handlebars, accountTemplate, accountSelectorTemplate, positionTemplate,
+        filterTransactionsTemplate, modalTemplate, tradeTemplate, transactionTemplate) {
+        
         'use strict';
 
         var _templates;
@@ -42,6 +46,8 @@ define(
                     'account-selector': Handlebars.compile(accountSelectorTemplate),
                     'position': Handlebars.compile(positionTemplate),
                     'filter-transactions': Handlebars.compile(filterTransactionsTemplate),
+                    'modal': Handlebars.compile(modalTemplate),
+                    'trade': Handlebars.compile(tradeTemplate),
                     'transaction': Handlebars.compile(transactionTemplate)
                 };
             },

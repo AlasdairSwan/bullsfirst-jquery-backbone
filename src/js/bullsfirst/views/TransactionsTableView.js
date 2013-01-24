@@ -48,7 +48,7 @@ define(
 
 			render: function(){
 				this.$el.find('tbody').html('');
-
+console.log(this.collection);
 				// Add new rows from orders collection. Pass this object as context
 				this.collection.each(function(txn) {
 					var view = new TransactionView({model: txn});
